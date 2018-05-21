@@ -5,11 +5,16 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:ios": "react-native run-ios",
-    "test": "jest"
+    "start:android": "react-native run-android",
+    "test": "jest",
+    "lint": "tslint src/**/*.ts"
   },
   "dependencies": {
+    "@types/react-redux": "^6.0.0",
     "react": "16.3.1",
-    "react-native": "0.55.4"
+    "react-native": "0.55.4",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.3.14",
