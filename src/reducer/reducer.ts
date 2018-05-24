@@ -1,7 +1,7 @@
 import { ADD_FLAG } from '../action/action';
 
 export const intialState = {
-  flag: ''
+  flag: 'Init'
 };
 
 export const reducer = (state = intialState, action) => {
