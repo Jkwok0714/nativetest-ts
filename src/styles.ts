@@ -17,5 +17,13 @@ export const globalStyles = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
     marginBottom: 5
+  },
+  input: {
+    height: 40,
+    width: 200,
+    padding: 5,
+    borderColor: 'gray',
+    backgroundColor: 'white',
+    borderWidth: 1
   }
 });

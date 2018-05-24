@@ -22,6 +22,7 @@ import { Provider, connect } from 'react-redux';
 import HomeComponent from './HomeComponent';
 import InfoPageComponent from './InfoPageComponent';
 import CoolPageComponent from './CoolPageComponent';
+import NetworkComponent from './NetworkComponent';
 
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
@@ -45,6 +46,9 @@ const Tabs = createBottomTabNavigator({
   },
   InfoPage: {
     screen: InfoPageComponent
+  },
+  Network: {
+    screen: NetworkComponent
   }
 });
 

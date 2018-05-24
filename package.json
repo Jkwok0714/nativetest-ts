@@ -7,7 +7,8 @@
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
     "test": "jest",
-    "lint": "tslint src/**/*.ts"
+    "lint": "tslint src/**/*.ts",
+    "server-dev": "node testServer/index.js"
   },
   "dependencies": {
     "@types/react-redux": "^6.0.0",
