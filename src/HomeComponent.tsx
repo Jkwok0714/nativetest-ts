@@ -4,11 +4,14 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 import { connect } from 'react-redux';
 
 import { addFlag } from './action/action';
+
+import { globalStyles } from './styles';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -29,40 +32,28 @@ class HomeComponent extends Component {
     const { flag } = this.props;
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.welcome}>
           This-sure-is-native Native!
         </Text>
-        <Text style={styles.instructions}>
+        <Text style={globalStyles.instructions}>
           Filling App.js with loads of junk. Like: {flag}
         </Text>
-        <Text style={styles.instructions}>
+        <Text style={globalStyles.instructions}>
           {instructions}
         </Text>
+        <Button
+          onPress={() => this.props.navigation.navigate('CoolPage', { coolness: 1 })}
+          title='The Cool Page'
+        />
+        <Button
+          onPress={() => this.props.navigation.navigate('CoolPage', { coolness: 10 })}
+          title='The Coolest Page'
+        />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#54bc9c'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#fff'
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#fff',
-    marginBottom: 5
-  }
-});
 
 const mapStateToProps = state => {
   return {
