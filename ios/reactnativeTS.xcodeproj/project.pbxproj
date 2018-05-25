@@ -51,6 +51,8 @@
 		ADAED30320B7881900CEA9E3 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAED2F920B7881900CEA9E3 /* libstdc++.tbd */; };
 		ADAED30420B7881A00CEA9E3 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAED2FA20B7881900CEA9E3 /* GLKit.framework */; };
 		ADAED30520B7881A00CEA9E3 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAED2FB20B7881900CEA9E3 /* VideoToolbox.framework */; };
+		ADAED34D20B88A1A00CEA9E3 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAED34620B88A1900CEA9E3 /* WebRTC.framework */; };
+		ADAED35C20B898FF00CEA9E3 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADAED35B20B898FF00CEA9E3 /* Ionicons.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
 
@@ -389,6 +391,19 @@
 		ADAED2F920B7881900CEA9E3 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		ADAED2FA20B7881900CEA9E3 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		ADAED2FB20B7881900CEA9E3 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		ADAED31420B8834A00CEA9E3 /* RCTConvert+WebRTC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+WebRTC.h"; sourceTree = "<group>"; };
+		ADAED31520B8834A00CEA9E3 /* RCTConvert+WebRTC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+WebRTC.m"; sourceTree = "<group>"; };
+		ADAED31620B8834A00CEA9E3 /* RTCVideoViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCVideoViewManager.h; sourceTree = "<group>"; };
+		ADAED31720B8834A00CEA9E3 /* RTCVideoViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTCVideoViewManager.m; sourceTree = "<group>"; };
+		ADAED31820B8834A00CEA9E3 /* WebRTCModule+RTCDataChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebRTCModule+RTCDataChannel.h"; sourceTree = "<group>"; };
+		ADAED31920B8834A00CEA9E3 /* WebRTCModule+RTCDataChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+RTCDataChannel.m"; sourceTree = "<group>"; };
+		ADAED31A20B8834A00CEA9E3 /* WebRTCModule+RTCMediaStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+RTCMediaStream.m"; sourceTree = "<group>"; };
+		ADAED31B20B8834A00CEA9E3 /* WebRTCModule+RTCPeerConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebRTCModule+RTCPeerConnection.h"; sourceTree = "<group>"; };
+		ADAED31C20B8834A00CEA9E3 /* WebRTCModule+RTCPeerConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+RTCPeerConnection.m"; sourceTree = "<group>"; };
+		ADAED31D20B8834A00CEA9E3 /* WebRTCModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebRTCModule.h; sourceTree = "<group>"; };
+		ADAED31E20B8834A00CEA9E3 /* WebRTCModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebRTCModule.m; sourceTree = "<group>"; };
+		ADAED34620B88A1900CEA9E3 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = "../node_modules/react-native-webrtc/ios/WebRTC.framework"; sourceTree = "<group>"; };
+		ADAED35B20B898FF00CEA9E3 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -428,6 +443,7 @@
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
+				ADAED34D20B88A1A00CEA9E3 /* WebRTC.framework in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
@@ -579,6 +595,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADAED31320B8834A00CEA9E3 /* RCTWebRTC */,
 				ADAED2F320B7881900CEA9E3 /* AudioToolbox.framework */,
 				ADAED2F420B7881900CEA9E3 /* AVFoundation.framework */,
 				ADAED2F520B7881900CEA9E3 /* CoreAudio.framework */,
@@ -616,6 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAED2C120B7854000CEA9E3 /* RCTWebRTC.xcodeproj */,
+				ADAED34620B88A1900CEA9E3 /* WebRTC.framework */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -644,6 +662,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				ADAED35B20B898FF00CEA9E3 /* Ionicons.ttf */,
 				ADAED2EC20B7856800CEA9E3 /* WebRTC.framework */,
 				13B07FAE1A68108700A75B9A /* reactnativeTS */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -673,6 +692,25 @@
 				ADAED2D720B7854100CEA9E3 /* libRCTWebRTC.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ADAED31320B8834A00CEA9E3 /* RCTWebRTC */ = {
+			isa = PBXGroup;
+			children = (
+				ADAED31420B8834A00CEA9E3 /* RCTConvert+WebRTC.h */,
+				ADAED31520B8834A00CEA9E3 /* RCTConvert+WebRTC.m */,
+				ADAED31620B8834A00CEA9E3 /* RTCVideoViewManager.h */,
+				ADAED31720B8834A00CEA9E3 /* RTCVideoViewManager.m */,
+				ADAED31820B8834A00CEA9E3 /* WebRTCModule+RTCDataChannel.h */,
+				ADAED31920B8834A00CEA9E3 /* WebRTCModule+RTCDataChannel.m */,
+				ADAED31A20B8834A00CEA9E3 /* WebRTCModule+RTCMediaStream.m */,
+				ADAED31B20B8834A00CEA9E3 /* WebRTCModule+RTCPeerConnection.h */,
+				ADAED31C20B8834A00CEA9E3 /* WebRTCModule+RTCPeerConnection.m */,
+				ADAED31D20B8834A00CEA9E3 /* WebRTCModule.h */,
+				ADAED31E20B8834A00CEA9E3 /* WebRTCModule.m */,
+			);
+			name = RCTWebRTC;
+			path = "../node_modules/react-native-webrtc/ios/RCTWebRTC";
 			sourceTree = "<group>";
 		};
 		ADBDB9201DFEBF0600ED6528 /* Products */ = {
@@ -1142,6 +1180,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				ADAED35C20B898FF00CEA9E3 /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1300,10 +1339,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				FRAMEWORK_SEARCH_PATHS = "../node_modules/react-native-webrtc/ios/**";
 				INFOPLIST_FILE = reactnativeTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				LIBRARY_SEARCH_PATHS = "../node_modules/react-native-webrtc/ios/**";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1321,10 +1360,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				FRAMEWORK_SEARCH_PATHS = "../node_modules/react-native-webrtc/ios/**";
 				INFOPLIST_FILE = reactnativeTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				LIBRARY_SEARCH_PATHS = "../node_modules/react-native-webrtc/ios/**";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

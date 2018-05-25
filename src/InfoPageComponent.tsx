@@ -9,6 +9,7 @@ import {
   Button
 } from 'react-native';
 import { connect } from 'react-redux';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { globalStyles } from './styles';
 
@@ -16,7 +17,8 @@ import { addFlag } from './action/action';
 
 class InfoPageComponent extends Component {
   static navigationOptions = {
-    title: 'Info'
+    title: 'Info',
+    tabBarIcon: <Ionicons name={'logo-android'} size={25} color={'#54bc9c'} />
   };
 
   public state = {

@@ -8,7 +8,6 @@ import {
   Button
 } from 'react-native';
 import { connect } from 'react-redux';
-
 import { addFlag } from './action/action';
 
 import { globalStyles } from './styles';
@@ -21,6 +20,10 @@ const instructions = Platform.select({
 });
 
 class HomeComponent extends Component {
+  static navigationOptions = {
+    title: 'Info'
+  };
+
   componentDidMount () {
     const props = this.props;
     setTimeout(() => {

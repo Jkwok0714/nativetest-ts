@@ -23,9 +23,11 @@ import HomeComponent from './HomeComponent';
 import InfoPageComponent from './InfoPageComponent';
 import CoolPageComponent from './CoolPageComponent';
 import NetworkComponent from './NetworkComponent';
+import RtcPageComponent from './RtcPageComponent.tsx';
 
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+YellowBox.ignoreWarnings(['requires main queue setup since', 'Module WebRTCModule']);
 
 import { reducer } from './reducer/reducer';
 
@@ -49,6 +51,9 @@ const Tabs = createBottomTabNavigator({
   },
   Network: {
     screen: NetworkComponent
+  },
+  RtcPage: {
+    screen: RtcPageComponent
   }
 });
 

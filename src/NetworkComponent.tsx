@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { globalStyles } from './styles';
 import { connectSocket, cancelMessage } from './helpers/index';
@@ -17,7 +18,8 @@ const LOCATION_URL = 'https://dev.flowapp.com/location';
 
 class NetworkComponent extends Component {
   static navigationOptions = {
-    title: 'Network Page'
+    title: 'Network',
+    tabBarIcon: <Ionicons name={'ios-baseball'} size={25} color={'#54bc9c'} />
   };
 
   public state = {
