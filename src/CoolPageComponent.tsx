@@ -23,11 +23,19 @@ class CoolPageComponent extends Component {
   }
 
   componentDidMount () {
-    Dimensions.addEventListener('change', () => {
-        this.setState({
-            orientation: isPortrait() ? 'portrait' : 'landscape'
-        });
+    // Add to app level to disable tab navigator if necessary
+    Dimensions.addEventListener('change', this.setOrientation);
+  }
+
+  setOrientation = () => {
+    this.setState({
+        orientation: isPortrait() ? 'portrait' : 'landscape'
     });
+  }
+
+  componentWillUnmount () {
+    // Fix memory leak
+    Dimensions.removeEventListener('change', this.setOrientation);
   }
 
   render () {
