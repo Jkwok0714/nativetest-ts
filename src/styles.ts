@@ -18,6 +18,12 @@ export const globalStyles = StyleSheet.create({
     color: '#fff',
     marginBottom: 5
   },
+  chatBox: {
+    backgroundColor: 'white'
+  },
+  chatText: {
+    color: 'gray'
+  },
   input: {
     height: 40,
     width: 200,

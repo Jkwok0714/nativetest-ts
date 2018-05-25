@@ -26,6 +26,8 @@ import NetworkComponent from './NetworkComponent';
 import RtcPageComponent from './RtcPageComponent.tsx';
 
 import { YellowBox } from 'react-native';
+
+// Suppress errors from npm libraries
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 YellowBox.ignoreWarnings(['requires main queue setup since', 'Module WebRTCModule']);
 

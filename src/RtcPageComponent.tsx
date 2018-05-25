@@ -11,7 +11,8 @@ import {
 import { PORT_NUMBER, STUN_SERVER, MAX_MESSAGE } from './constants/index';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import openSocket from 'socket.io-client';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { globalStyles } from './styles';
 import { connectSocket, cancelMessage, setChannelListeners } from './helpers/index';
@@ -39,7 +40,8 @@ const iceConfig = {
 
 class RtcPageComponent extends Component {
   static navigationOptions = {
-    title: 'wRTC'
+    title: 'wRTC',
+    tabBarIcon: <Ionicons name={'ios-bug'} size={25} color={'#54bc9c'} />
   };
 
   state = {
@@ -67,14 +69,14 @@ class RtcPageComponent extends Component {
   }
 
   render () {
-    const { loggedIn } = this.state;
+    const { loggedIn, userList, connectedTo, messages } = this.state;
 
     return (
       <View style={globalStyles.container}>
         <Text style={globalStyles.welcome}>
           The WebRTC Page
         </Text>
-        {!loggedIn && (
+        {!loggedIn ? (
           <View>
             <Text style={globalStyles.instructions}>Not logged in</Text>
             <TextInput
@@ -83,9 +85,35 @@ class RtcPageComponent extends Component {
               value={this.state.ownPeer}
             />
             <Button
-              title={'Submit Changes'}
+              title={'Login'}
               onPress={this.handleLogin}
             />
+          </View>
+        ) : (
+          <View>
+            <Text style={globalStyles.instructions}>Logged in as {this.state.ownPeer}{connectedTo ? `, and connected to ${connectedTo}` : ''}</Text>
+            {connectedTo ? (
+              <View>
+                <View style={globalStyles.chatBox}>
+                  {messages.map(msg => <Text key={msg.message} style={globalStyles.chatText}>{`${msg.sender}: ${msg.message}`}</Text>)}
+                </View>
+              </View>
+            ) : (
+              <View>
+                <TextInput
+                  style={globalStyles.input}
+                  onChangeText={(text) => this.setState({ otherPeer: text })}
+                  value={this.state.otherPeer}
+                />
+                <Button
+                  title={'Connect'}
+                  onPress={this.handleConnect}
+                />
+                <View>
+                  {userList.map(user => <Text onPress={() => this.handleSetOtherPeer(user)} key={user}>{user}</Text>)}
+                </View>
+              </View>
+            )}
           </View>
         )}
       </View>
