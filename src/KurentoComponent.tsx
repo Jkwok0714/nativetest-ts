@@ -14,6 +14,8 @@ import kurentoUtils from 'react-native-kurento-utils';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { globalStyles } from './styles';
 
+// import * as Video from 'react-native-video';
+
 import WebRTC from 'react-native-webrtc';
 const {
   RTCView
@@ -38,13 +40,10 @@ class KurentoComponent extends Component {
   }
 
   componentDidMount () {
-    console.log(kurentoUtils);
     this.ws = new WebSocket('wss://' + ADDRESS + '/one2many');
     this.addSocketListeners(this.ws);
     // Auto join as a viewer
     console.log(this.ws);
-    // this.ws.send('poop');
-    // this.generateViewer();
   }
 
   addSocketListeners () {
@@ -99,6 +98,11 @@ class KurentoComponent extends Component {
       this.dispose();
     } else {
       console.log('webRtcPeer', this.webRtcPeer, message);
+
+      this.webRtcPeer.peerConnection.onaddstream = (e) => {
+        console.log('Stream added', e.stream.toURL());
+        this.setState({ remoteStream: e.stream.toURL() });
+      }
       this.webRtcPeer.processAnswer(message.sdpAnswer);
     }
   }
@@ -166,7 +170,7 @@ class KurentoComponent extends Component {
           onPress={this.generateViewer}
         />
         <View style={globalStyles.rtcViewContainer}>
-          <RTCView ref={component => this._rtcView = component} style={globalStyles.rtcView} />
+          <RTCView streamURL={ remoteStream } style={globalStyles.rtcView} />
         </View>}
       </View>
     );
