@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+// import { vw, ch } from 'react-native-viewport-units';
 
 export const globalStyles = StyleSheet.create({
   container: {
@@ -31,5 +32,15 @@ export const globalStyles = StyleSheet.create({
     borderColor: 'gray',
     backgroundColor: 'white',
     borderWidth: 1
+  },
+  rtcView: {
+  },
+  rtcViewContainer: {
+    resizeMode: 'cover'
+  },
+  imageStretch: {
+    flex: 1,
+    width: '90%',
+    resizeMode: 'contain'
   }
 });

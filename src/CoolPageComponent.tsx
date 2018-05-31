@@ -4,13 +4,16 @@ import {
   StyleSheet,
   Text,
   View,
-  Dimensions
+  Dimensions,
+  Image
 } from 'react-native';
 import { connect } from 'react-redux';
 
 import { globalStyles } from './styles';
 import { isPortrait, isTablet } from './helpers/index';
 import { addFlag } from './action/action';
+
+const iSick = require('./img/iSick.png');
 
 class CoolPageComponent extends Component {
   static navigationOptions = {
@@ -50,6 +53,7 @@ class CoolPageComponent extends Component {
         <Text style={globalStyles.instructions}>This is a cool page; cool, right?</Text>
         <Text style={globalStyles.instructions}>There is a coolness factor of {coolness || 0}</Text>
         <Text style={globalStyles.instructions}>So cool that the {deviceType} is in {orientation}</Text>
+        <Image style={globalStyles.imageStretch} source={iSick} />
       </View>
     );
   }

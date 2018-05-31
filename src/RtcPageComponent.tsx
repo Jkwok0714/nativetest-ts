@@ -6,7 +6,8 @@ import {
   View,
   Dimensions,
   TextInput,
-  Button
+  Button,
+  Platform
 } from 'react-native';
 import { PORT_NUMBER, STUN_SERVER, MAX_MESSAGE } from './constants/index';
 import { connect } from 'react-redux';
@@ -30,8 +31,12 @@ const {
 } = WebRTC;
 
 // IP of the machine running the signalling servers
-const localIP = '192.168.168.201';
-const socketPort = 3000;
+// const localIP = '192.168.37.167';
+const localIP = Platform.select({
+  ios: '192.168.37.167',
+  android: '10.0.2.2'
+});
+const socketPort = 3007;
 const SOCKET_URL = `wss://${localIP}:${socketPort}`;
 
 const iceConfig = {
@@ -69,16 +74,16 @@ class RtcPageComponent extends Component {
   }
 
   render () {
-    const { loggedIn, userList, connectedTo, messages } = this.state;
+    const { loggedIn, userList, connectedTo, messages, remoteStream } = this.state;
 
     return (
       <View style={globalStyles.container}>
         <Text style={globalStyles.welcome}>
-          The WebRTC Page
+          WebRTC
         </Text>
         {!loggedIn ? (
           <View>
-            <Text style={globalStyles.instructions}>Not logged in</Text>
+            <Text style={globalStyles.instructions}>Not logged in. Will connect to {SOCKET_URL}</Text>
             <TextInput
               style={globalStyles.input}
               onChangeText={(text) => this.setState({ ownPeer: text })}
@@ -97,6 +102,19 @@ class RtcPageComponent extends Component {
                 <View style={globalStyles.chatBox}>
                   {messages.map(msg => <Text key={msg.message} style={globalStyles.chatText}>{`${msg.sender}: ${msg.message}`}</Text>)}
                 </View>
+                <TextInput
+                  style={globalStyles.input}
+                  onChangeText={(text) => this.setState({ message: text })}
+                  value={this.state.message}
+                />
+                <Button
+                  title={'Send'}
+                  onPress={this.handleMessage}
+                />
+                <View style={globalStyles.rtcViewContainer}>
+                  <RTCView streamURL={remoteStream} style={globalStyles.rtcView} />
+                </View>
+                <Text>{remoteStream}</Text>
               </View>
             ) : (
               <View>
@@ -233,10 +251,9 @@ class RtcPageComponent extends Component {
           let rtcConnection = new RTCPeerConnection(iceConfig);
 
           // Attach stream listening and behavior for getting remote stream
-          // rtcConnection.addStream(stream);
           rtcConnection.onaddstream = (e) => {
               // console.log('InAddStream for Peer Connection', e);
-              this.setState({ remoteStream: e.stream });
+              this.setState({ remoteStream: e.stream.toURL() });
           }
 
           // Configure ICE handling and inform other connections through socket when it's found
