@@ -25,7 +25,6 @@ class HomeComponent extends Component {
   };
 
   componentDidMount () {
-    console.log('Home component mounted');
     const props = this.props;
     setTimeout(() => {
       props.addFlag('UPDATED REDUCKS');

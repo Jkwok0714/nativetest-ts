@@ -34,13 +34,19 @@ export const globalStyles = StyleSheet.create({
     borderWidth: 1
   },
   rtcView: {
+    width: 400,
+    height: 300
   },
   rtcViewContainer: {
-    resizeMode: 'cover'
+    width: '100%'
   },
   imageStretch: {
     flex: 1,
     width: '90%',
     resizeMode: 'contain'
+  },
+  centerContent: {
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

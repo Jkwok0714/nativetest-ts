@@ -82,7 +82,7 @@ class RtcPageComponent extends Component {
           WebRTC
         </Text>
         {!loggedIn ? (
-          <View>
+          <View style={globalStyles.centerContent}>
             <Text style={globalStyles.instructions}>Not logged in. Will connect to {SOCKET_URL}</Text>
             <TextInput
               style={globalStyles.input}
